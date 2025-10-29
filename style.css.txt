@@ -1,0 +1,121 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #f47c20;
+  --accent-dark: #d05f08;
+  --accent-2: #094f7a;
+  --text: #111827;
+  --success: #059669;
+  --danger: #ef4444;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* DARK THEME */
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --card: #151e33;
+  --text: #e8eefb;
+  --muted: #9aa3b8;
+  --shadow: rgba(255, 255, 255, 0.05);
+  --accent: #ffa94d;
+  --accent-dark: #ff8400;
+}
+
+/* Basic */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Topbar */
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  color: white;
+  box-shadow: 0 6px 24px var(--shadow);
+}
+.title-block .main-title { font-weight: 800; font-size: 1.15rem; }
+.title-block .tag { background:#fff;color:var(--accent);padding:4px 8px;border-radius:6px;font-weight:700;margin-left:8px; }
+.subtitle { font-size: 0.85rem; opacity: 0.95; }
+
+/* Username */
+.username-area input {
+  border-radius: 8px;
+  padding: 6px 8px;
+  border: none;
+  min-width: 160px;
+}
+
+/* Icon button */
+.icon-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.icon-btn:hover { background: rgba(255,255,255,0.15); }
+
+/* Layout */
+.main-grid {
+  max-width: 1150px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 360px 1fr 340px;
+  gap: 18px;
+  align-items: start;
+}
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px var(--shadow);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn-primary:hover { background: var(--accent-dark); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #e6e9ee;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+[data-theme="dark"] .btn-ghost {
+  border-color: #3a4661;
+  color: var(--text);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width:1100px){
+  .main-grid { grid-template-columns: 1fr; padding: 0 12px; }
+}

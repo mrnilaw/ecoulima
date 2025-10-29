@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UniBudget ULIMA PRO</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="left">
+        <div class="title-block">
+          <div class="main-title">UniBudget <span class="tag">ULIMA PRO</span></div>
+          <div class="subtitle">Gestor de finanzas para estudiantes</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="username-area">
+          <input id="studentName" placeholder="Tu nombre (p. ej. Juan)" maxlength="30" />
+        </div>
+        <button id="themeToggle" class="icon-btn" title="Cambiar tema">🌓</button>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <!-- Left column -->
+      <section class="panel card">
+        <div class="panel-head">
+          <h3>Agregar transacción</h3>
+          <div class="small-muted">Registra ingresos y gastos</div>
+        </div>
+
+        <form id="txForm" class="form">
+          <div class="row">
+            <label>Fecha
+              <input id="date" type="date" required />
+            </label>
+            <label>Categoría
+              <select id="category">
+                <option>Matrícula</option>
+                <option>Cafetería ULIMA</option>
+                <option>Transporte</option>
+                <option>Materiales / Libros</option>
+                <option>Alojamiento</option>
+                <option>Entretenimiento</option>
+                <option>Salud</option>
+                <option>Otros</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>Tipo
+              <select id="type">
+                <option value="gasto">Gasto</option>
+                <option value="ingreso">Ingreso</option>
+              </select>
+            </label>
+
+            <label>Monto (S/)
+              <input id="amount" type="number" step="0.01" min="0.01" required />
+            </label>
+          </div>
+
+          <label>Nota
